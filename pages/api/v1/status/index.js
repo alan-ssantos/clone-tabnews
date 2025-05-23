@@ -17,7 +17,8 @@ async function status(request, response) {
     text: "SELECT count(*)::int as opened_connections FROM pg_stat_activity WHERE datname = $1;",
     values: [process.env.POSTGRES_DB],
   });
-  const databaseOpenedConnectionsValue = databaseOpenedConnectionsResult.rows[0].opened_connections;
+  const databaseOpenedConnectionsValue =
+    databaseOpenedConnectionsResult.rows[0].opened_connections;
 
   response.status(200).json({
     updated_at: updatedAt,
