@@ -6,7 +6,7 @@ const migrationDefaultOptions = {
   dir: resolve("infra", "migrations"),
   migrationsTable: "pqmigrations",
   direction: "up",
-  verbose: true,
+  log: () => {},
   dryRun: true,
 };
 
